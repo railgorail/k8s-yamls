@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: git-debug
+  namespace: default
+spec:
+  containers:
+  - name: git
+    image: alpine/git:latest
+    command: ["sh", "-c", "sleep infinity"]
+  restartPolicy: Never
+# kubectl exec -it pod/git-debug -- sh
